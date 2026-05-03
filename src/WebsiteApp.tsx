@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, type Variants } from 'motion/react'
 import { ArrowRight, Check, ChevronRight } from 'lucide-react'
 
@@ -88,6 +88,7 @@ function SectionHeading({
 
 export function WebsiteApp() {
     const scrollRef = useRef<HTMLDivElement>(null)
+    const [isAnnual, setIsAnnual] = useState(false)
     const { scrollYProgress } = useScroll({ container: scrollRef })
     const heroLift = useTransform(scrollYProgress, [0, 0.22], [0, -72])
     const canvasLift = useTransform(scrollYProgress, [0, 0.26], [0, -38])
@@ -500,6 +501,20 @@ export function WebsiteApp() {
                             description="The tiers expand from core sales and stock control into finance, CRM, marketplace workflows, and team operations."
                         />
 
+                        <div className="flex justify-center mt-8 mb-4">
+                            <div className="flex items-center gap-3">
+                                <span className={`text-sm font-semibold ${!isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>Monthly</span>
+                                <button
+                                    type="button"
+                                    onClick={() => setIsAnnual(!isAnnual)}
+                                    className="relative inline-flex h-6 w-11 items-center rounded-full bg-[var(--website-ink)] transition-colors focus:outline-none"
+                                >
+                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-1'}`} />
+                                </button>
+                                <span className={`text-sm font-semibold ${isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>Annually</span>
+                            </div>
+                        </div>
+
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
@@ -528,7 +543,18 @@ export function WebsiteApp() {
                                         ) : null}
                                     </div>
 
-                                    <div className="mt-8 text-3xl font-black tracking-tight text-[var(--website-ink)]">{plan.priceLabel}</div>
+                                    {isAnnual && plan.annualSaving && (
+                                        <div className="mt-4">
+                                            <span className="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-bold text-red-600">
+                                                {plan.annualSaving}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    <div className="mt-8 flex items-baseline gap-1">
+                                        <div className="text-3xl font-black tracking-tight text-[var(--website-ink)]">{isAnnual ? plan.annualPriceLabel : plan.priceLabel}</div>
+                                        <div className="text-sm font-semibold text-[var(--website-muted)]">{isAnnual ? '/per year' : '/per month'}</div>
+                                    </div>
                                     <p className="website-copy mt-4 text-sm">{plan.description}</p>
 
                                     <div className="mt-8 space-y-3">

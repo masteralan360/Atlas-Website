@@ -70,6 +70,8 @@ export interface WebsiteTestimonial {
 export interface WebsitePricingPlan {
     name: string
     priceLabel: string
+    annualPriceLabel: string
+    annualSaving: string
     description: string
     highlight?: boolean
     features: string[]
@@ -249,6 +251,8 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
     {
         name: 'Commerce Core',
         priceLabel: '75,000 IQD',
+        annualPriceLabel: '800,000 IQD',
+        annualSaving: '11% Saving',
         description: 'For small businesses that need checkout, stock control, and clean sales records in one place.',
         features: [
             'POS and KDS',
@@ -262,6 +266,8 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
     {
         name: 'Operations Suite',
         priceLabel: '100,000 IQD',
+        annualPriceLabel: '1,000,000 IQD',
+        annualSaving: '16% Saving',
         description: 'For growing teams that need customer operations, finance control, and demand tracking connected to daily sales.',
         highlight: true,
         features: [
@@ -276,6 +282,8 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
     {
         name: 'Enterprise Flow',
         priceLabel: '150,000 IQD',
+        annualPriceLabel: '1,500,000 IQD',
+        annualSaving: '22% Saving',
         description: 'For businesses running multiple departments that want people operations, finance depth, and admin control in one workspace.',
         features: [
             'Everything in Operations Suite',
