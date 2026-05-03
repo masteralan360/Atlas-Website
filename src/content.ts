@@ -75,6 +75,7 @@ export interface WebsitePricingPlan {
     description: string
     highlight?: boolean
     features: string[]
+    tooltips?: Record<string, string>
     cta: string
 }
 
@@ -86,47 +87,47 @@ export const websiteNavItems: WebsiteNavItem[] = [
 ]
 
 export const websiteHeroMetrics: WebsiteHeroMetric[] = [
-    { value: '30+', label: 'Operational modules' },
-    { value: '04', label: 'Operating currencies' },
-    { value: '03', label: 'Interface languages' },
-    { value: '01', label: 'Shared workspace' }
+    { value: '30+', label: 'Operational Modules' },
+    { value: '04', label: 'Operating Currencies' },
+    { value: '03', label: 'Interface Languages' },
+    { value: '01', label: 'Shared Workspace' }
 ]
 
 export const websiteHeroCommands: WebsiteHeroCommand[] = [
     {
         label: 'Frontline',
-        value: 'POS and KDS',
-        note: 'Checkout, kitchen flow, invoice output',
+        value: 'POS & KDS',
+        note: 'Streamline checkout and kitchen workflows',
         icon: CreditCard
     },
     {
         label: 'Stock',
-        value: 'Products and transfers',
-        note: 'Catalog, storages, movement, discounts',
+        value: 'Inventory Management',
+        note: 'Control catalogs and track stock movement',
         icon: Warehouse
     },
     {
         label: 'Finance',
-        value: 'Ledger and payments',
-        note: 'Budgets, loans, installments, settlements',
+        value: 'Ledger & Payments',
+        note: 'Manage budgets and financial settlements',
         icon: Wallet
     },
     {
         label: 'Demand',
-        value: 'CRM and marketplace',
-        note: 'Orders, customers, suppliers, storefronts',
+        value: 'CRM & Marketplace',
+        note: 'Oversee orders and digital storefronts',
         icon: Store
     },
     {
         label: 'Service',
-        value: 'Travel agency module',
-        note: 'Tourists, supplier cuts, commissions',
+        value: 'Travel Agency',
+        note: 'Handle tours and manage commissions',
         icon: PlaneTakeoff
     },
     {
         label: 'People',
-        value: 'HR and workspace control',
-        note: 'Members, roles, payroll context',
+        value: 'HR & Workspace',
+        note: 'Administer teams and configure access',
         icon: UsersRound
     }
 ]
@@ -134,73 +135,73 @@ export const websiteHeroCommands: WebsiteHeroCommand[] = [
 export const websiteArchitectureBlocks: WebsiteArchitectureBlock[] = [
     {
         eyebrow: 'Commerce Engine',
-        title: 'Sell, serve, and record every transaction once.',
-        description: 'Atlas ties checkout, rapid-service flows, KDS visibility, sales history, and invoice output into the same operating layer.',
+        title: 'Unified Transaction Processing',
+        description: 'Consolidate sales operations, kitchen displays, and invoicing into a single seamless platform without data silos.',
         icon: CreditCard,
         accent: 'teal',
-        points: ['POS checkout flow', 'KDS dashboard', 'Sales history and returns', 'Receipt and A4 invoice output']
+        points: ['Point of Sale Operations', 'Kitchen Display Systems', 'Sales & Return Tracking', 'Automated Invoicing']
     },
     {
         eyebrow: 'Inventory Core',
-        title: 'Make stock movement visible instead of reactive.',
-        description: 'Products, storages, transfers, transaction logs, and stock adjustments are part of the same workflow, not a side spreadsheet.',
+        title: 'Intelligent Inventory Oversight',
+        description: 'Integrate product catalogs and stock adjustments directly into your main operating workflow for real-time accuracy.',
         icon: PackageSearch,
         accent: 'gold',
-        points: ['Products and categories', 'Storages and replenishment', 'Inventory transfers', 'Adjustment audit trail']
+        points: ['Product Catalog Management', 'Automated Replenishment', 'Cross-Location Transfers', 'Comprehensive Audit Trails']
     },
     {
         eyebrow: 'Finance Layer',
-        title: 'Keep cash control close to daily operations.',
-        description: 'Ledger, payments, direct transactions, loans, installments, budgets, and invoice archives stay anchored to the underlying activity.',
+        title: 'Integrated Financial Control',
+        description: 'Anchor ledgers, transactions, and budget reviews to underlying operational activities automatically.',
         icon: HandCoins,
         accent: 'ink',
-        points: ['Ledger and payment flow', 'Loans and installments', 'Budget and finance views', 'Historical invoice access']
+        points: ['Centralized Ledger', 'Loan & Installment Tracking', 'Dynamic Budget Views', 'Secure Invoice Archives']
     },
     {
         eyebrow: 'Demand + Workspace',
-        title: 'Run customers, suppliers, storefront demand, and internal teams from one system.',
-        description: 'Atlas covers business partners, customers, suppliers, orders, public marketplace storefronts, inquiry-order follow-up, HR, WhatsApp desktop, and workspace roles.',
+        title: 'Comprehensive Ecosystem Management',
+        description: 'Orchestrate business partners, digital storefronts, and internal teams seamlessly across a consolidated environment.',
         icon: Building2,
         accent: 'clay',
-        points: ['CRM and order surfaces', 'Marketplace storefront and order inbox', 'HR and workspace management', 'WhatsApp and follow-up tools']
+        points: ['Integrated CRM Hub', 'Digital Marketplace Stores', 'Human Resources Control', 'External Communication Suite']
     }
 ]
 
 export const websiteSpotlights: WebsiteSpotlight[] = [
     {
         eyebrow: 'Offline-first',
-        title: 'Keep operating when the network drops.',
-        description: 'Atlas is built to keep local work moving and sync later instead of blocking frontline tasks on connectivity.',
+        title: 'Resilient Offline Operations',
+        description: 'Maintain uninterrupted frontline workflows with reliable background synchronization upon reconnection.',
         icon: Globe2
     },
     {
         eyebrow: 'Exchange-aware',
-        title: 'Work in USD, EUR, IQD, and TRY with context.',
-        description: 'Multi-currency selling and reporting are part of the product surface, not an afterthought added in exports.',
+        title: 'Native Multi-Currency Support',
+        description: 'Conduct and report business seamlessly across USD, EUR, IQD, and TRY natively.',
         icon: ArrowRightLeft
     },
     {
         eyebrow: 'Workspace control',
-        title: 'Gate modules by role and workspace configuration.',
-        description: 'Admins can expose only the modules a business uses while keeping viewer, staff, and admin visibility separated.',
+        title: 'Granular Role Governance',
+        description: 'Securely gate modules and separate configurations across your administrative and frontline staff.',
         icon: ShieldCheck
     },
     {
         eyebrow: 'Service modules',
-        title: 'Handle travel workflows next to retail and finance.',
-        description: 'Tourist groups, supplier cuts, payment collection, and commission logic sit beside the rest of the ERP instead of in a separate tool.',
+        title: 'Specialized Service Handling',
+        description: 'Manage diverse operations like tourist groups and commission logic alongside standard retail modules.',
         icon: PlaneTakeoff
     },
     {
         eyebrow: 'People ops',
-        title: 'Connect HR records to real workspace users.',
-        description: 'Employees, payroll context, dividends, member accounts, and internal visibility are built into the same workspace model.',
+        title: 'Embedded Human Resources',
+        description: 'Integrate employee records and payroll context seamlessly into the core workspace model.',
         icon: BriefcaseBusiness
     },
     {
         eyebrow: 'Marketplace',
-        title: 'Publish a store and pull inquiry orders back into operations.',
-        description: 'Atlas supports public store links, QR sharing, category browsing, cart-based inquiry checkout, and an internal order inbox for follow-up and fulfillment.',
+        title: 'Streamlined Digital Commerce',
+        description: 'Launch operational storefronts and automatically funnel inquiries into your centralized fulfillment centers.',
         icon: MessageSquareShare
     }
 ]
@@ -208,42 +209,42 @@ export const websiteSpotlights: WebsiteSpotlight[] = [
 export const websiteWorkflowSteps: WebsiteWorkflowStep[] = [
     {
         step: '01',
-        title: 'Capture demand at the edge of the business',
-        description: 'Atlas starts where the work starts: checkout, order intake, partner activity, marketplace inquiry orders, or travel service sales.',
-        outcome: 'One entry point for revenue capture',
-        points: ['POS and KDS', 'Orders, customers, and suppliers', 'Marketplace storefront and inquiry checkout']
+        title: 'Capture Demand at the Source',
+        description: 'Initiate workflows precisely where value is created—be it the checkout counter or your digital storefront.',
+        outcome: 'Unified Revenue Streams',
+        points: ['Point of Sale Operations', 'Integrated CRM Platforms', 'Digital Marketplace Checkout']
     },
     {
         step: '02',
-        title: 'Move stock, money, and obligations in context',
-        description: 'Inventory events, payment events, and finance events stay linked so the system explains the business instead of only recording fragments.',
-        outcome: 'Operations and finance stay attached',
-        points: ['Transfers, stock logs, adjustments, discounts', 'Ledger, payments, and direct transactions', 'Loans, installments, budgets, and invoice archives']
+        title: 'Synchronize Asset Movement',
+        description: 'Link inventory updates with financial events ensuring a transparent and accurate view of the business state.',
+        outcome: 'Cohesive Operational Alignment',
+        points: ['Automated Inventory Adjustments', 'Real-time Ledger Balancing', 'Integrated Finance Tracking']
     },
     {
         step: '03',
-        title: 'Read performance without rebuilding the picture',
-        description: 'Dashboards, revenue analytics, monthly comparison, team performance, and finance views turn operating data into direction.',
-        outcome: 'Reporting that starts from the actual workflow',
-        points: ['Revenue and margin views', 'Monthly and team comparison', 'Workspace, member, and follow-up signals']
+        title: 'Derive Actionable Insights',
+        description: 'Transform operating data directly into responsive analytics and comprehensive performance reviews.',
+        outcome: 'Actionable Business Intelligence',
+        points: ['Real-time Margin Analysis', 'Performance Benchmarking', 'Deep Workspace Analytics']
     }
 ]
 
 export const websiteTestimonials: WebsiteTestimonial[] = [
     {
-        quote: 'Atlas replaced the handoff between POS, inventory sheets, and finance updates. Our team works from one operating board now.',
-        role: 'Retail operations lead',
-        company: 'Multi-branch store group'
+        quote: 'Atlas united our disparate systems into one seamless operating board. The improvement in team efficiency is remarkable.',
+        role: 'Retail Operations Lead',
+        company: 'Multi-Branch Store Group'
     },
     {
-        quote: 'Orders, partner balances, marketplace follow-up, and payments finally live in the same workflow instead of four separate systems.',
-        role: 'Commercial coordinator',
-        company: 'Wholesale and demand management'
+        quote: 'A truly consolidated workflow that flawlessly replaces multiple fragmented tools for demand management and financial tracking.',
+        role: 'Commercial Coordinator',
+        company: 'Wholesale Enterprise'
     },
     {
-        quote: 'Travel sales, commissions, HR records, and reporting stopped being side tools. Atlas made them part of the main business rhythm.',
-        role: 'Service business manager',
-        company: 'Travel and back-office operations'
+        quote: 'Managing complex operations like commissions and HR records is now completely effortless and perfectly integrated.',
+        role: 'Service Business Manager',
+        company: 'Travel Operations'
     }
 ]
 
@@ -253,13 +254,16 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
         priceLabel: '75,000 IQD',
         annualPriceLabel: '800,000 IQD',
         annualSaving: '11% Saving',
-        description: 'For small businesses that need checkout, stock control, and clean sales records in one place.',
+        description: 'Essential point-of-sale and inventory control for growing businesses.',
         features: [
-            'POS and KDS',
-            'Products, categories, and storages',
-            'Inventory transfers and stock adjustments',
-            'Sales history, returns, and invoice output',
-            'Dashboard overview'
+            'Point Of Sale (POS)',
+            'Sales History, Returns & Invoice Output (Receipt)',
+            'Products, Categories & Storages',
+            'Inventory Transfers & Stock Adjustments',
+            'Ledger, Payments & Direct Transactions',
+            'Real-Time Dashboard Overview',
+            'Workspace In-App Notification Inbox & Alerts',
+            'Up to 3 Members in the Workspace'
         ],
         cta: 'Choose Commerce Core'
     },
@@ -268,15 +272,28 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
         priceLabel: '100,000 IQD',
         annualPriceLabel: '1,000,000 IQD',
         annualSaving: '16% Saving',
-        description: 'For growing teams that need customer operations, finance control, and demand tracking connected to daily sales.',
+        description: 'Advanced functionality including CRM, finance, and digital marketplace integrations.',
         highlight: true,
         features: [
             'Everything in Commerce Core',
-            'Business partners, customers, suppliers, and orders',
-            'Marketplace storefront, QR sharing, and inquiry order inbox',
-            'Ledger, payments, direct transactions, and finance views',
-            'Discounts, promotions, and revenue analytics'
+            'Barcode Scanner & Thermal Printer Support For POS',
+            'High Quality A4 Invoice Outputs (PDF) With Multiple Workspace Contacts',
+            'Advanced CRM Business Partners, Suppliers & Customers',
+            'Orders & Marketplace E-Commerce Inquiry Orders',
+            'Marketplace Storefronts, & QR Sharing',
+            'Loans & Installments Management With Invoice Output',
+            'Stock & Category Discounts Management',
+            'Revenue Analytics & Team Performance',
+            'Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)',
+            'Supports Sales, Accounting & Analytics monthly Excel Export',
+            'Supports uploading PDF files to workspace storage (max 100 MB)',
+            'Up to 2 Workspace Branches',
+            'Up to 10 Members in the Workspace'
         ],
+        tooltips: {
+            'Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)': 'Exchange Rates Are Updated Automatically Based on your Region in Iraq, But The User Can Always add Exchange Rates Manually',
+            'Marketplace Storefronts, & QR Sharing': 'You Can Create a Free Storefront for your Business and Share it with your Customers via QR Code or Link, and They Can Order from you through it, and the Orders Will Come to your Workspace as Inquiries'
+        },
         cta: 'Choose Operations Suite'
     },
     {
@@ -284,14 +301,20 @@ export const websitePricingPlans: WebsitePricingPlan[] = [
         priceLabel: '150,000 IQD',
         annualPriceLabel: '1,500,000 IQD',
         annualSaving: '22% Saving',
-        description: 'For businesses running multiple departments that want people operations, finance depth, and admin control in one workspace.',
+        description: 'Complete enterprise solution featuring deep HR management and advanced internal protocols.',
         features: [
             'Everything in Operations Suite',
-            'HR, members, and payroll context',
-            'Budget, loans, installments, and invoice archive',
-            'Workspace roles, permissions, and configuration',
-            'Advanced reporting, team performance, and WhatsApp follow-up'
+            'Accounting, HR, Expenses & Payroll Context',
+            'Workspace Roles & Permission Controls',
+            'Access to In-App Whatsapp & Whatsapp Sharing Features',
+            'Stock Expiry, Batches and Lot tracking',
+            'Supports uploading various file types to workspace storage (max 1 GB)',
+            'Up to 5 Workspace Branches',
+            'Up to 20 Members in the Workspace'
         ],
+        tooltips: {
+            'Accounting, HR, Expenses & Payroll Context': 'Advanced Accounting and HR Management With Dividends and Salaries Management, The User Will Be Alerted Upon Overdues Via the In-App Notification System'
+        },
         cta: 'Choose Enterprise Flow'
     }
 ]
@@ -304,34 +327,34 @@ export const websiteProofStrip = [
     'Ledger',
     'Marketplace',
     'Orders',
-    'Business Partners',
-    'Budget',
+    'Partners',
+    'Budgets',
     'Currency',
     'HR',
     'Analytics',
-    'WhatsApp',
-    'Workspace Control'
+    'Communication',
+    'Administration'
 ]
 
 export const websiteDesignSignals = [
     {
         label: 'Workflow',
-        value: 'Commerce, finance, and marketplace',
+        value: 'Commerce & Finance Integration',
         icon: Blocks
     },
     {
         label: 'Localization',
-        value: 'English, Arabic, Kurdish',
+        value: 'Multilingual Interface Output',
         icon: Languages
     },
     {
         label: 'Business output',
-        value: 'Receipt and invoice ready',
+        value: 'Standardized Invoicing Systems',
         icon: Receipt
     },
     {
         label: 'Insights',
-        value: 'Dashboard and analytics',
+        value: 'Real-Time Analytic Modeling',
         icon: BarChart3
     }
 ]

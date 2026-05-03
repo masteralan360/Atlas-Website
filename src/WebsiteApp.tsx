@@ -168,8 +168,7 @@ export function WebsiteApp() {
                                         ATLAS ERP
                                     </h1>
                                     <p className="website-copy max-w-2xl text-base md:text-xl">
-                                        Atlas brings POS, inventory, CRM, orders, marketplace storefronts, finance, HR, analytics, and
-                                        workspace control into one system so teams can run the business without stitching together separate tools.
+                                        Atlas unifies essential business operations—from point of sale and inventory management to finance and human resources—into a seamless ecosystem.
                                     </p>
                                 </motion.div>
 
@@ -229,7 +228,7 @@ export function WebsiteApp() {
                                     <div className="website-canvas-header">
                                         <div>
                                             <p className="website-kicker text-white/52">Atlas workspace map</p>
-                                            <h3 className="website-display mt-3 text-3xl text-white md:text-4xl">One board for the moving parts.</h3>
+                                            <h3 className="website-display mt-3 text-3xl text-white md:text-4xl">A centralized operating model.</h3>
                                         </div>
                                         <span className="website-canvas-badge">Connected operating model</span>
                                     </div>
@@ -272,7 +271,7 @@ export function WebsiteApp() {
                                                 <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">Deployment</div>
                                                 <div className="mt-3 text-lg font-black text-white">Local, cloud, or hybrid</div>
                                                 <p className="mt-2 text-sm text-white/58">
-                                                    Atlas keeps the frontline usable and keeps reporting close to the source workflow.
+                                                    Ensure consistent frontline accessibility with robust reporting connected directly to source operations.
                                                 </p>
                                             </div>
                                             <div className="website-canvas-panel rounded-[28px] p-5">
@@ -295,8 +294,8 @@ export function WebsiteApp() {
                     <section id="architecture" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
                             eyebrow="Architecture"
-                            title="Atlas connects the business layers that usually break apart as teams grow."
-                            description="Commerce, inventory, finance, customer operations, marketplace demand, and people management stay in one shared system so the handoff between teams becomes part of the flow."
+                            title="Harmonize disparate business layers as your operations scale."
+                            description="Seamlessly integrate commerce, finance, people management, and marketplace demands within a unified, collaborative ecosystem."
                         />
 
                         <motion.div
@@ -309,17 +308,17 @@ export function WebsiteApp() {
                             <motion.article variants={revealUp} className="website-featured-panel rounded-[36px] p-8 md:p-10">
                                 <p className="website-kicker">Connected operations</p>
                                 <h3 className="website-display mt-5 text-4xl text-[var(--website-ink)] md:text-5xl">
-                                    Atlas is strongest when the handoff between selling, stock, finance, and reporting disappears.
+                                    Eliminate friction between selling, stock, finance, and reporting.
                                 </h3>
                                 <p className="website-copy mt-5 max-w-2xl text-base">
-                                    Every transaction, movement, and balance update stays closer to the source event, which gives managers a clearer read on the business without rebuilding the picture in spreadsheets.
+                                    Transactions, movements, and balance updates stay close to the source event, providing managers a clear operational picture without messy spreadsheets.
                                 </p>
 
                                 <div className="mt-8 grid gap-4 md:grid-cols-3">
                                     {[
-                                        'Checkout to invoice',
-                                        'Stock move to ledger',
-                                        'Customer demand to reporting'
+                                        'Point of Sale to Invoice',
+                                        'Inventory movement to Ledger',
+                                        'Demand Capture to Analytics'
                                     ].map((item) => (
                                         <div key={item} className="website-line-card rounded-[24px] p-4">
                                             <div className="text-sm font-black text-[var(--website-ink)]">{item}</div>
@@ -344,8 +343,8 @@ export function WebsiteApp() {
                     <section id="modules" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
                             eyebrow="Modules"
-                            title="Each module is built for a distinct operating job, but the whole system stays coherent."
-                            description="Atlas covers frontline sales, stock movement, finance control, customer operations, marketplace workflows, and people management inside one shared product model."
+                            title="Specialized performance driven by systematic cohesion."
+                            description="Deliver powerful capabilities across sales, inventory, finance, and team management within a tightly integrated core."
                         />
 
                         <motion.div
@@ -383,7 +382,7 @@ export function WebsiteApp() {
                                             {block.points.map((point) => (
                                                 <div key={point} className="website-line-card rounded-[22px] p-4">
                                                     <div className="flex items-start gap-3">
-                                                        <span className={['mt-0.5 inline-flex h-6 min-w-6 items-center justify-center rounded-full text-[11px] font-black', tone.pill].join(' ')}>
+                                                        <span className={['mt-0.5 inline-flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-black', tone.pill].join(' ')}>
                                                             <Check className="h-3.5 w-3.5" />
                                                         </span>
                                                         <span className="text-sm font-semibold text-[var(--website-ink)]">{point}</span>
@@ -419,8 +418,8 @@ export function WebsiteApp() {
                     <section id="workflow" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
                             eyebrow="Workflow"
-                            title="Atlas follows the actual motion of the business from demand to reporting."
-                            description="Teams capture revenue, move stock and money in context, then read performance from the same operating trail instead of reconciling disconnected systems."
+                            title="Align perfectly with the natural rhythm of your operations."
+                            description="Effortlessly track everything from initial revenue capture to final performance reporting without ever switching platforms."
                         />
 
                         <motion.div
@@ -443,8 +442,8 @@ export function WebsiteApp() {
                                     </div>
                                     <div className="mt-6 space-y-3">
                                         {step.points.map((point) => (
-                                            <div key={point} className="flex items-center gap-3 text-sm font-medium text-[var(--website-ink)]">
-                                                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
+                                            <div key={point} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
+                                                <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
                                                     <ChevronRight className="h-4 w-4" />
                                                 </div>
                                                 {point}
@@ -459,8 +458,8 @@ export function WebsiteApp() {
                     <section className="mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
                             eyebrow="Customer teams"
-                            title="Atlas fits businesses that need operations, finance, and service teams to work from the same source of truth."
-                            description="These examples reflect the module combinations Atlas already supports across retail, wholesale, and service-heavy operating models."
+                            title="Achieve a definitive single source of truth across all operational teams."
+                            description="Empower your organizational verticals effortlessly, spanning retail applications to service-focused enterprise structures."
                         />
 
                         <motion.div
@@ -559,11 +558,21 @@ export function WebsiteApp() {
 
                                     <div className="mt-8 space-y-3">
                                         {plan.features.map((feature) => (
-                                            <div key={feature} className="flex items-center gap-3 text-sm font-medium text-[var(--website-ink)]">
-                                                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
+                                            <div key={feature} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
+                                                <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
                                                     <Check className="h-4 w-4" />
                                                 </div>
-                                                {feature}
+                                                {plan.tooltips?.[feature] ? (
+                                                    <span className="group relative mt-0.5 inline-block cursor-help border-b border-dashed border-[var(--website-muted)] pb-[1px] transition-colors hover:border-[var(--website-ink)]">
+                                                        {feature}
+                                                        <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-[280px] -translate-x-1/2 rounded-md bg-[var(--website-ink)] px-3 py-2 text-center text-xs font-semibold leading-relaxed text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+                                                            {plan.tooltips[feature]}
+                                                            <span className="absolute top-full left-1/2 -mt-1 -translate-x-1/2 border-4 border-transparent border-t-[var(--website-ink)]" />
+                                                        </span>
+                                                    </span>
+                                                ) : (
+                                                    <span className="mt-0.5">{feature}</span>
+                                                )}
                                             </div>
                                         ))}
                                     </div>
@@ -596,10 +605,10 @@ export function WebsiteApp() {
                                 <div className="space-y-5">
                                     <p className="website-kicker text-white/52">Atlas rollout</p>
                                     <h2 className="website-display max-w-3xl text-4xl text-white md:text-6xl">
-                                        Atlas is strongest when the business no longer has to switch mental models every hour.
+                                        Eliminate operational friction and unify your organization.
                                     </h2>
                                     <p className="max-w-2xl text-base leading-8 text-white/68 md:text-lg">
-                                        Bring sales, inventory, marketplace demand, finance, and team visibility into one operating system built around how the work actually moves.
+                                        Integrate vital processes into one robust system designed specifically around the organic workflows of your workforce.
                                     </p>
                                 </div>
 
