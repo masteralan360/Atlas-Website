@@ -26,11 +26,13 @@ export interface WebsiteNavItem {
 }
 
 export interface WebsiteHeroMetric {
+    id: string
     value: string
     label: string
 }
 
 export interface WebsiteHeroCommand {
+    id: string
     label: string
     value: string
     note: string
@@ -38,6 +40,7 @@ export interface WebsiteHeroCommand {
 }
 
 export interface WebsiteArchitectureBlock {
+    id: string
     eyebrow: string
     title: string
     description: string
@@ -47,6 +50,7 @@ export interface WebsiteArchitectureBlock {
 }
 
 export interface WebsiteSpotlight {
+    id: string
     eyebrow: string
     title: string
     description: string
@@ -62,12 +66,14 @@ export interface WebsiteWorkflowStep {
 }
 
 export interface WebsiteTestimonial {
+    id: string
     quote: string
     role: string
     company: string
 }
 
 export interface WebsitePricingPlan {
+    id: string
     name: string
     priceLabel: string
     annualPriceLabel: string
@@ -79,282 +85,255 @@ export interface WebsitePricingPlan {
     cta: string
 }
 
-export const websiteNavItems: WebsiteNavItem[] = [
-    { id: 'architecture', label: 'Architecture' },
-    { id: 'modules', label: 'Modules' },
-    { id: 'workflow', label: 'Workflow' },
-    { id: 'pricing', label: 'Pricing' }
+export const getWebsiteNavItems = (t: (key: string) => string): WebsiteNavItem[] => [
+    { id: 'architecture', label: t('nav.architecture') },
+    { id: 'modules', label: t('nav.modules') },
+    { id: 'workflow', label: t('nav.workflow') },
+    { id: 'pricing', label: t('nav.pricing') }
 ]
 
-export const websiteHeroMetrics: WebsiteHeroMetric[] = [
-    { value: '30+', label: 'Operational Modules' },
-    { value: '04', label: 'Operating Currencies' },
-    { value: '03', label: 'Interface Languages' },
-    { value: '01', label: 'Shared Workspace' }
+export const getWebsiteHeroMetrics = (t: (key: string) => string): WebsiteHeroMetric[] => [
+    { id: 'modules', value: t('hero.metrics.modules.value'), label: t('hero.metrics.modules.label') },
+    { id: 'currencies', value: t('hero.metrics.currencies.value'), label: t('hero.metrics.currencies.label') },
+    { id: 'languages', value: t('hero.metrics.languages.value'), label: t('hero.metrics.languages.label') },
+    { id: 'workspace', value: t('hero.metrics.workspace.value'), label: t('hero.metrics.workspace.label') }
 ]
 
-export const websiteHeroCommands: WebsiteHeroCommand[] = [
+export const getWebsiteHeroCommands = (t: (key: string) => string): WebsiteHeroCommand[] => [
     {
-        label: 'Frontline',
-        value: 'POS & KDS',
-        note: 'Streamline checkout and kitchen workflows',
+        id: 'frontline',
+        label: t('canvas.commands.frontline.label'),
+        value: t('canvas.commands.frontline.value'),
+        note: t('canvas.commands.frontline.note'),
         icon: CreditCard
     },
     {
-        label: 'Stock',
-        value: 'Inventory Management',
-        note: 'Control catalogs and track stock movement',
+        id: 'stock',
+        label: t('canvas.commands.stock.label'),
+        value: t('canvas.commands.stock.value'),
+        note: t('canvas.commands.stock.note'),
         icon: Warehouse
     },
     {
-        label: 'Finance',
-        value: 'Ledger & Payments',
-        note: 'Manage budgets and financial settlements',
+        id: 'finance',
+        label: t('canvas.commands.finance.label'),
+        value: t('canvas.commands.finance.value'),
+        note: t('canvas.commands.finance.note'),
         icon: Wallet
     },
     {
-        label: 'Demand',
-        value: 'CRM & Marketplace',
-        note: 'Oversee orders and digital storefronts',
+        id: 'demand',
+        label: t('canvas.commands.demand.label'),
+        value: t('canvas.commands.demand.value'),
+        note: t('canvas.commands.demand.note'),
         icon: Store
     },
     {
-        label: 'Service',
-        value: 'Travel Agency',
-        note: 'Handle tours and manage commissions',
+        id: 'service',
+        label: t('canvas.commands.service.label'),
+        value: t('canvas.commands.service.value'),
+        note: t('canvas.commands.service.note'),
         icon: PlaneTakeoff
     },
     {
-        label: 'People',
-        value: 'HR & Workspace',
-        note: 'Administer teams and configure access',
+        id: 'people',
+        label: t('canvas.commands.people.label'),
+        value: t('canvas.commands.people.value'),
+        note: t('canvas.commands.people.note'),
         icon: UsersRound
     }
 ]
 
-export const websiteArchitectureBlocks: WebsiteArchitectureBlock[] = [
+export const getWebsiteArchitectureBlocks = (t: (key: string, options?: any) => any): WebsiteArchitectureBlock[] => [
     {
-        eyebrow: 'Commerce Engine',
-        title: 'Unified Transaction Processing',
-        description: 'Consolidate sales operations, kitchen displays, and invoicing into a single seamless platform without data silos.',
+        id: 'commerce',
+        eyebrow: t('architecture.blocks.commerce.eyebrow'),
+        title: t('architecture.blocks.commerce.title'),
+        description: t('architecture.blocks.commerce.description'),
         icon: CreditCard,
         accent: 'teal',
-        points: ['Point of Sale Operations', 'Kitchen Display Systems', 'Sales & Return Tracking', 'Automated Invoicing']
+        points: t('architecture.blocks.commerce.points', { returnObjects: true })
     },
     {
-        eyebrow: 'Inventory Core',
-        title: 'Intelligent Inventory Oversight',
-        description: 'Integrate product catalogs and stock adjustments directly into your main operating workflow for real-time accuracy.',
+        id: 'inventory',
+        eyebrow: t('architecture.blocks.inventory.eyebrow'),
+        title: t('architecture.blocks.inventory.title'),
+        description: t('architecture.blocks.inventory.description'),
         icon: PackageSearch,
         accent: 'gold',
-        points: ['Product Catalog Management', 'Automated Replenishment', 'Cross-Location Transfers', 'Comprehensive Audit Trails']
+        points: t('architecture.blocks.inventory.points', { returnObjects: true })
     },
     {
-        eyebrow: 'Finance Layer',
-        title: 'Integrated Financial Control',
-        description: 'Anchor ledgers, transactions, and budget reviews to underlying operational activities automatically.',
+        id: 'finance',
+        eyebrow: t('architecture.blocks.finance.eyebrow'),
+        title: t('architecture.blocks.finance.title'),
+        description: t('architecture.blocks.finance.description'),
         icon: HandCoins,
         accent: 'ink',
-        points: ['Centralized Ledger', 'Loan & Installment Tracking', 'Dynamic Budget Views', 'Secure Invoice Archives']
+        points: t('architecture.blocks.finance.points', { returnObjects: true })
     },
     {
-        eyebrow: 'Demand + Workspace',
-        title: 'Comprehensive Ecosystem Management',
-        description: 'Orchestrate business partners, digital storefronts, and internal teams seamlessly across a consolidated environment.',
+        id: 'ecosystem',
+        eyebrow: t('architecture.blocks.ecosystem.eyebrow'),
+        title: t('architecture.blocks.ecosystem.title'),
+        description: t('architecture.blocks.ecosystem.description'),
         icon: Building2,
         accent: 'clay',
-        points: ['Integrated CRM Hub', 'Digital Marketplace Stores', 'Human Resources Control', 'External Communication Suite']
+        points: t('architecture.blocks.ecosystem.points', { returnObjects: true })
     }
 ]
 
-export const websiteSpotlights: WebsiteSpotlight[] = [
+export const getWebsiteSpotlights = (t: (key: string) => string): WebsiteSpotlight[] => [
     {
-        eyebrow: 'Offline-first',
-        title: 'Resilient Offline Operations',
-        description: 'Maintain uninterrupted frontline workflows with reliable background synchronization upon reconnection.',
+        id: 'offline',
+        eyebrow: t('modules.spotlights.offline.eyebrow'),
+        title: t('modules.spotlights.offline.title'),
+        description: t('modules.spotlights.offline.description'),
         icon: Globe2
     },
     {
-        eyebrow: 'Exchange-aware',
-        title: 'Native Multi-Currency Support',
-        description: 'Conduct and report business seamlessly across USD, EUR, IQD, and TRY natively.',
+        id: 'exchange',
+        eyebrow: t('modules.spotlights.exchange.eyebrow'),
+        title: t('modules.spotlights.exchange.title'),
+        description: t('modules.spotlights.exchange.description'),
         icon: ArrowRightLeft
     },
     {
-        eyebrow: 'Workspace control',
-        title: 'Granular Role Governance',
-        description: 'Securely gate modules and separate configurations across your administrative and frontline staff.',
+        id: 'workspace',
+        eyebrow: t('modules.spotlights.workspace.eyebrow'),
+        title: t('modules.spotlights.workspace.title'),
+        description: t('modules.spotlights.workspace.description'),
         icon: ShieldCheck
     },
     {
-        eyebrow: 'Service modules',
-        title: 'Specialized Service Handling',
-        description: 'Manage diverse operations like tourist groups and commission logic alongside standard retail modules.',
+        id: 'service',
+        eyebrow: t('modules.spotlights.service.eyebrow'),
+        title: t('modules.spotlights.service.title'),
+        description: t('modules.spotlights.service.description'),
         icon: PlaneTakeoff
     },
     {
-        eyebrow: 'People ops',
-        title: 'Embedded Human Resources',
-        description: 'Integrate employee records and payroll context seamlessly into the core workspace model.',
+        id: 'people',
+        eyebrow: t('modules.spotlights.people.eyebrow'),
+        title: t('modules.spotlights.people.title'),
+        description: t('modules.spotlights.people.description'),
         icon: BriefcaseBusiness
     },
     {
-        eyebrow: 'Marketplace',
-        title: 'Streamlined Digital Commerce',
-        description: 'Launch operational storefronts and automatically funnel inquiries into your centralized fulfillment centers.',
+        id: 'marketplace',
+        eyebrow: t('modules.spotlights.marketplace.eyebrow'),
+        title: t('modules.spotlights.marketplace.title'),
+        description: t('modules.spotlights.marketplace.description'),
         icon: MessageSquareShare
     }
 ]
 
-export const websiteWorkflowSteps: WebsiteWorkflowStep[] = [
+export const getWebsiteWorkflowSteps = (t: (key: string, options?: any) => any): WebsiteWorkflowStep[] => [
     {
         step: '01',
-        title: 'Capture Demand at the Source',
-        description: 'Initiate workflows precisely where value is created—be it the checkout counter or your digital storefront.',
-        outcome: 'Unified Revenue Streams',
-        points: ['Point of Sale Operations', 'Integrated CRM Platforms', 'Digital Marketplace Checkout']
+        title: t('workflow.steps.capture.title'),
+        description: t('workflow.steps.capture.description'),
+        outcome: t('workflow.steps.capture.outcome'),
+        points: t('workflow.steps.capture.points', { returnObjects: true })
     },
     {
         step: '02',
-        title: 'Synchronize Asset Movement',
-        description: 'Link inventory updates with financial events ensuring a transparent and accurate view of the business state.',
-        outcome: 'Cohesive Operational Alignment',
-        points: ['Automated Inventory Adjustments', 'Real-time Ledger Balancing', 'Integrated Finance Tracking']
+        title: t('workflow.steps.synchronize.title'),
+        description: t('workflow.steps.synchronize.description'),
+        outcome: t('workflow.steps.synchronize.outcome'),
+        points: t('workflow.steps.synchronize.points', { returnObjects: true })
     },
     {
         step: '03',
-        title: 'Derive Actionable Insights',
-        description: 'Transform operating data directly into responsive analytics and comprehensive performance reviews.',
-        outcome: 'Actionable Business Intelligence',
-        points: ['Real-time Margin Analysis', 'Performance Benchmarking', 'Deep Workspace Analytics']
+        title: t('workflow.steps.insights.title'),
+        description: t('workflow.steps.insights.description'),
+        outcome: t('workflow.steps.insights.outcome'),
+        points: t('workflow.steps.insights.points', { returnObjects: true })
     }
 ]
 
-export const websiteTestimonials: WebsiteTestimonial[] = [
+export const getWebsiteTestimonials = (t: (key: string) => string): WebsiteTestimonial[] => [
     {
-        quote: 'Atlas united our disparate systems into one seamless operating board. The improvement in team efficiency is remarkable.',
-        role: 'Retail Operations Lead',
-        company: 'Multi-Branch Store Group'
+        id: 'retail',
+        quote: t('testimonials.items.retail.quote'),
+        role: t('testimonials.items.retail.role'),
+        company: t('testimonials.items.retail.company')
     },
     {
-        quote: 'A truly consolidated workflow that flawlessly replaces multiple fragmented tools for demand management and financial tracking.',
-        role: 'Commercial Coordinator',
-        company: 'Wholesale Enterprise'
+        id: 'wholesale',
+        quote: t('testimonials.items.wholesale.quote'),
+        role: t('testimonials.items.wholesale.role'),
+        company: t('testimonials.items.wholesale.company')
     },
     {
-        quote: 'Managing complex operations like commissions and HR records is now completely effortless and perfectly integrated.',
-        role: 'Service Business Manager',
-        company: 'Travel Operations'
+        id: 'travel',
+        quote: t('testimonials.items.travel.quote'),
+        role: t('testimonials.items.travel.role'),
+        company: t('testimonials.items.travel.company')
     }
 ]
 
-export const websitePricingPlans: WebsitePricingPlan[] = [
+export const getWebsitePricingPlans = (t: (key: string, options?: any) => any): WebsitePricingPlan[] => [
     {
-        name: 'Commerce Core',
-        priceLabel: '75,000 IQD',
-        annualPriceLabel: '800,000 IQD',
-        annualSaving: '11% Saving',
-        description: 'Essential point-of-sale and inventory control for growing businesses.',
-        features: [
-            'Point Of Sale (POS)',
-            'Sales History, Returns & Invoice Output (Receipt)',
-            'Products, Categories & Storages',
-            'Inventory Transfers & Stock Adjustments',
-            'Ledger, Payments & Direct Transactions',
-            'Real-Time Dashboard Overview',
-            'Workspace In-App Notification Inbox & Alerts',
-            'Up to 3 Members in the Workspace'
-        ],
-        cta: 'Choose Commerce Core'
+        id: 'commerce',
+        name: t('pricing.plans.commerce.name'),
+        priceLabel: t('pricing.plans.commerce.priceLabel'),
+        annualPriceLabel: t('pricing.plans.commerce.annualPriceLabel'),
+        annualSaving: t('pricing.plans.commerce.annualSaving'),
+        description: t('pricing.plans.commerce.description'),
+        features: t('pricing.plans.commerce.features', { returnObjects: true }),
+        cta: t('pricing.plans.commerce.cta')
     },
     {
-        name: 'Operations Suite',
-        priceLabel: '100,000 IQD',
-        annualPriceLabel: '1,000,000 IQD',
-        annualSaving: '16% Saving',
-        description: 'Advanced functionality including CRM, finance, and digital marketplace integrations.',
+        id: 'operations',
+        name: t('pricing.plans.operations.name'),
+        priceLabel: t('pricing.plans.operations.priceLabel'),
+        annualPriceLabel: t('pricing.plans.operations.annualPriceLabel'),
+        annualSaving: t('pricing.plans.operations.annualSaving'),
+        description: t('pricing.plans.operations.description'),
         highlight: true,
-        features: [
-            'Everything in Commerce Core',
-            'Barcode Scanner & Thermal Printer Support For POS',
-            'High Quality A4 Invoice Outputs (PDF) With Multiple Workspace Contacts',
-            'Advanced CRM Business Partners, Suppliers & Customers',
-            'Orders & Marketplace E-Commerce Inquiry Orders',
-            'Marketplace Storefronts, & QR Sharing',
-            'Loans & Installments Management With Invoice Output',
-            'Stock & Category Discounts Management',
-            'Revenue Analytics & Team Performance',
-            'Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)',
-            'Supports Sales, Accounting & Analytics monthly Excel Export',
-            'Supports uploading PDF files to workspace storage (max 100 MB)',
-            'Up to 2 Workspace Branches',
-            'Up to 10 Members in the Workspace'
-        ],
-        tooltips: {
-            'Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)': 'Exchange Rates Are Updated Automatically Based on your Region in Iraq, But The User Can Always add Exchange Rates Manually',
-            'Marketplace Storefronts, & QR Sharing': 'You Can Create a Free Storefront for your Business and Share it with your Customers via QR Code or Link, and They Can Order from you through it, and the Orders Will Come to your Workspace as Inquiries'
-        },
-        cta: 'Choose Operations Suite'
+        features: t('pricing.plans.operations.features', { returnObjects: true }),
+        tooltips: t('pricing.plans.operations.tooltips', { returnObjects: true }),
+        cta: t('pricing.plans.operations.cta')
     },
     {
-        name: 'Enterprise Flow',
-        priceLabel: '150,000 IQD',
-        annualPriceLabel: '1,500,000 IQD',
-        annualSaving: '22% Saving',
-        description: 'Complete enterprise solution featuring deep HR management and advanced internal protocols.',
-        features: [
-            'Everything in Operations Suite',
-            'Accounting, HR, Expenses & Payroll Context',
-            'Workspace Roles & Permission Controls',
-            'Access to In-App Whatsapp & Whatsapp Sharing Features',
-            'Stock Expiry, Batches and Lot tracking',
-            'Supports uploading various file types to workspace storage (max 1 GB)',
-            'Up to 5 Workspace Branches',
-            'Up to 20 Members in the Workspace'
-        ],
-        tooltips: {
-            'Accounting, HR, Expenses & Payroll Context': 'Advanced Accounting and HR Management With Dividends and Salaries Management, The User Will Be Alerted Upon Overdues Via the In-App Notification System'
-        },
-        cta: 'Choose Enterprise Flow'
+        id: 'enterprise',
+        name: t('pricing.plans.enterprise.name'),
+        priceLabel: t('pricing.plans.enterprise.priceLabel'),
+        annualPriceLabel: t('pricing.plans.enterprise.annualPriceLabel'),
+        annualSaving: t('pricing.plans.enterprise.annualSaving'),
+        description: t('pricing.plans.enterprise.description'),
+        features: t('pricing.plans.enterprise.features', { returnObjects: true }),
+        tooltips: t('pricing.plans.enterprise.tooltips', { returnObjects: true }),
+        cta: t('pricing.plans.enterprise.cta')
     }
 ]
 
-export const websiteProofStrip = [
-    'POS',
-    'KDS',
-    'Inventory',
-    'Discounts',
-    'Ledger',
-    'Marketplace',
-    'Orders',
-    'Partners',
-    'Budgets',
-    'Currency',
-    'HR',
-    'Analytics',
-    'Communication',
-    'Administration'
-]
+export const getWebsiteProofStrip = (t: (key: string, options?: any) => any): string[] => t('proofStrip', { returnObjects: true })
 
-export const websiteDesignSignals = [
+export const getWebsiteDesignSignals = (t: (key: string) => string) => [
     {
-        label: 'Workflow',
-        value: 'Commerce & Finance Integration',
+        id: 'workflow',
+        label: t('hero.designSignals.workflow.label'),
+        value: t('hero.designSignals.workflow.value'),
         icon: Blocks
     },
     {
-        label: 'Localization',
-        value: 'Multilingual Interface Output',
+        id: 'localization',
+        label: t('hero.designSignals.localization.label'),
+        value: t('hero.designSignals.localization.value'),
         icon: Languages
     },
     {
-        label: 'Business output',
-        value: 'Standardized Invoicing Systems',
+        id: 'output',
+        label: t('hero.designSignals.output.label'),
+        value: t('hero.designSignals.output.value'),
         icon: Receipt
     },
     {
-        label: 'Insights',
-        value: 'Real-Time Analytic Modeling',
+        id: 'insights',
+        label: t('hero.designSignals.insights.label'),
+        value: t('hero.designSignals.insights.value'),
         icon: BarChart3
     }
 ]

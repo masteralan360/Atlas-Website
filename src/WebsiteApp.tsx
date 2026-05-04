@@ -2,18 +2,20 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform, type Variants } from 'motion/react'
 import { ArrowRight, Check, ChevronRight } from 'lucide-react'
 
+import { useTranslation } from 'react-i18next'
+
 import atlasLogoUrl from './assets/AtlasClear.svg'
 import {
-    websiteArchitectureBlocks,
-    websiteDesignSignals,
-    websiteHeroCommands,
-    websiteHeroMetrics,
-    websiteNavItems,
-    websitePricingPlans,
-    websiteProofStrip,
-    websiteSpotlights,
-    websiteTestimonials,
-    websiteWorkflowSteps
+    getWebsiteArchitectureBlocks,
+    getWebsiteDesignSignals,
+    getWebsiteHeroCommands,
+    getWebsiteHeroMetrics,
+    getWebsiteNavItems,
+    getWebsitePricingPlans,
+    getWebsiteProofStrip,
+    getWebsiteSpotlights,
+    getWebsiteTestimonials,
+    getWebsiteWorkflowSteps
 } from './content'
 import './website.css'
 
@@ -94,13 +96,26 @@ export function WebsiteApp() {
     const canvasLift = useTransform(scrollYProgress, [0, 0.26], [0, -38])
     const auraDrift = useTransform(scrollYProgress, [0, 1], [0, 180])
 
+    const { t, i18n } = useTranslation()
+
+    const websiteNavItems = getWebsiteNavItems(t)
+    const websiteHeroMetrics = getWebsiteHeroMetrics(t)
+    const websiteHeroCommands = getWebsiteHeroCommands(t)
+    const websiteArchitectureBlocks = getWebsiteArchitectureBlocks(t)
+    const websiteSpotlights = getWebsiteSpotlights(t)
+    const websiteWorkflowSteps = getWebsiteWorkflowSteps(t)
+    const websiteTestimonials = getWebsiteTestimonials(t)
+    const websitePricingPlans = getWebsitePricingPlans(t)
+    const websiteProofStrip = getWebsiteProofStrip(t)
+    const websiteDesignSignals = getWebsiteDesignSignals(t)
+
     useEffect(() => {
         const previousTitle = document.title
-        document.title = 'Atlas | Business Operating System'
+        document.title = t('brand.pageTitle')
         return () => {
             document.title = previousTitle
         }
-    }, [])
+    }, [t])
 
     const scrollToSection = (id: string) => {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -122,8 +137,8 @@ export function WebsiteApp() {
                         >
                             <img src={atlasLogoUrl} alt="Atlas logo" className="h-11 w-11 shrink-0 object-contain" />
                             <div>
-                                <div className="text-[11px] font-black uppercase tracking-[0.34em] text-[var(--website-muted)]">Atlas</div>
-                                <div className="text-sm font-semibold text-[var(--website-ink)]">Business operating system</div>
+                                <div className="text-[11px] font-black uppercase tracking-[0.34em] text-[var(--website-muted)]">{t('brand.name')}</div>
+                                <div className="text-sm font-semibold text-[var(--website-ink)]">{t('brand.tagline')}</div>
                             </div>
                         </button>
 
@@ -140,13 +155,21 @@ export function WebsiteApp() {
                             ))}
                         </nav>
 
-                        <button
-                            type="button"
-                            onClick={() => scrollToSection('pricing')}
-                            className="website-cta-primary rounded-full px-4 py-2 text-sm font-semibold md:px-5"
-                        >
-                            Plan rollout
-                        </button>
+                        <div className="flex items-center gap-3">
+                            <div className="hidden shrink-0 items-center gap-1 rounded-full bg-[var(--website-border)] p-1 sm:flex">
+                                <button type="button" onClick={() => i18n.changeLanguage('en')} className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${i18n.language === 'en' ? 'bg-white text-[var(--website-ink)] shadow-sm' : 'text-[var(--website-muted)] hover:text-[var(--website-ink)]'}`}>EN</button>
+                                <button type="button" onClick={() => i18n.changeLanguage('ar')} className={`font-arabic rounded-full px-3 py-1.5 text-xs font-semibold transition ${i18n.language === 'ar' ? 'bg-white text-[var(--website-ink)] shadow-sm' : 'text-[var(--website-muted)] hover:text-[var(--website-ink)]'}`}>عربي</button>
+                                <button type="button" onClick={() => i18n.changeLanguage('ckb')} className={`font-arabic rounded-full px-3 py-1.5 text-xs font-semibold transition ${i18n.language === 'ckb' ? 'bg-white text-[var(--website-ink)] shadow-sm' : 'text-[var(--website-muted)] hover:text-[var(--website-ink)]'}`}>کوردی</button>
+                            </div>
+
+                            <button
+                                type="button"
+                                onClick={() => scrollToSection('pricing')}
+                                className="website-cta-primary rounded-full px-4 py-2 text-sm font-semibold md:px-5"
+                            >
+                                {t('nav.planRollout')}
+                            </button>
+                        </div>
                     </div>
                 </header>
 
@@ -162,13 +185,13 @@ export function WebsiteApp() {
                             >
                                 <motion.div variants={revealUp} className="space-y-5">
                                     <span className="website-pill inline-flex items-center rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.28em]">
-                                        Unified operations
+                                        {t('hero.pill')}
                                     </span>
                                     <h1 className="website-display max-w-5xl text-5xl text-[var(--website-ink)] md:text-7xl xl:text-[6rem]">
-                                        ATLAS ERP
+                                        {t('hero.heading')}
                                     </h1>
                                     <p className="website-copy max-w-2xl text-base md:text-xl">
-                                        Atlas unifies essential business operations—from point of sale and inventory management to finance and human resources—into a seamless ecosystem.
+                                        {t('hero.description')}
                                     </p>
                                 </motion.div>
 
@@ -178,22 +201,22 @@ export function WebsiteApp() {
                                         onClick={() => scrollToSection('architecture')}
                                         className="website-cta-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold"
                                     >
-                                        Explore architecture
-                                        <ArrowRight className="h-4 w-4" />
+                                        {t('hero.ctaExplore')}
+                                        <ArrowRight className="h-4 w-4 rtl:rotate-180" />
                                     </button>
                                     <button
                                         type="button"
                                         onClick={() => scrollToSection('modules')}
                                         className="website-cta-secondary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold"
                                     >
-                                        View modules
-                                        <ChevronRight className="h-4 w-4" />
+                                        {t('hero.ctaModules')}
+                                        <ChevronRight className="h-4 w-4 rtl:rotate-180" />
                                     </button>
                                 </motion.div>
 
                                 <motion.div variants={stagger} className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                                     {websiteHeroMetrics.map((metric) => (
-                                        <motion.div key={metric.label} variants={revealUp} className="website-stat-card rounded-[28px] px-5 py-5">
+                                        <motion.div key={metric.id} variants={revealUp} className="website-stat-card rounded-[28px] px-5 py-5">
                                             <div className="text-3xl font-black tracking-tight text-[var(--website-ink)]">{metric.value}</div>
                                             <div className="mt-2 text-sm font-medium text-[var(--website-muted)]">{metric.label}</div>
                                         </motion.div>
@@ -202,7 +225,7 @@ export function WebsiteApp() {
 
                                 <motion.div variants={stagger} className="grid gap-3 md:grid-cols-2">
                                     {websiteDesignSignals.map((item) => (
-                                        <motion.div key={item.label} variants={revealUp} className="website-note-card rounded-[26px] px-5 py-4">
+                                        <motion.div key={item.id} variants={revealUp} className="website-note-card rounded-[26px] px-5 py-4">
                                             <div className="flex items-start gap-4">
                                                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[var(--website-ink)] shadow-sm">
                                                     <item.icon className="h-5 w-5" />
@@ -227,15 +250,15 @@ export function WebsiteApp() {
                                 <div className="website-canvas rounded-[38px] p-5 md:p-6">
                                     <div className="website-canvas-header">
                                         <div>
-                                            <p className="website-kicker text-white/52">Atlas workspace map</p>
-                                            <h3 className="website-display mt-3 text-3xl text-white md:text-4xl">A centralized operating model.</h3>
+                                            <p className="website-kicker text-white/52">{t('canvas.kicker')}</p>
+                                            <h3 className="website-display mt-3 text-3xl text-white md:text-4xl">{t('canvas.heading')}</h3>
                                         </div>
-                                        <span className="website-canvas-badge">Connected operating model</span>
+                                        <span className="website-canvas-badge">{t('canvas.badge')}</span>
                                     </div>
 
                                     <div className="mt-6 grid gap-3 md:grid-cols-2">
                                         {websiteHeroCommands.map((command) => (
-                                            <div key={command.label} className="website-command-card rounded-[24px] p-4">
+                                            <div key={command.id} className="website-command-card rounded-[24px] p-4">
                                                 <div className="flex items-start justify-between gap-4">
                                                     <div>
                                                         <div className="text-[10px] font-black uppercase tracking-[0.26em] text-white/46">{command.label}</div>
@@ -252,7 +275,7 @@ export function WebsiteApp() {
 
                                     <div className="mt-6 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
                                         <div className="website-canvas-panel rounded-[28px] p-5">
-                                            <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">Linked flow</div>
+                                            <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">{t('canvas.linkedFlow')}</div>
                                             <div className="mt-4 space-y-4">
                                                 {websiteWorkflowSteps.map((step) => (
                                                     <div key={step.step} className="flex items-start gap-4">
@@ -268,17 +291,17 @@ export function WebsiteApp() {
 
                                         <div className="space-y-4">
                                             <div className="website-canvas-panel rounded-[28px] p-5">
-                                                <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">Deployment</div>
-                                                <div className="mt-3 text-lg font-black text-white">Local, cloud, or hybrid</div>
+                                                <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">{t('canvas.deployment')}</div>
+                                                <div className="mt-3 text-lg font-black text-white">{t('canvas.deploymentHeading')}</div>
                                                 <p className="mt-2 text-sm text-white/58">
-                                                    Ensure consistent frontline accessibility with robust reporting connected directly to source operations.
+                                                    {t('canvas.deploymentDescription')}
                                                 </p>
                                             </div>
                                             <div className="website-canvas-panel rounded-[28px] p-5">
-                                                <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">Core module mix</div>
+                                                <div className="text-[10px] font-black uppercase tracking-[0.28em] text-white/44">{t('canvas.coreModuleMix')}</div>
                                                 <div className="mt-3 flex flex-wrap gap-2">
-                                                    {websiteProofStrip.slice(0, 6).map((item) => (
-                                                        <span key={item} className="website-chip-dark">
+                                                    {websiteProofStrip.slice(0, 6).map((item, index) => (
+                                                        <span key={index} className="website-chip-dark">
                                                             {item}
                                                         </span>
                                                     ))}
@@ -293,9 +316,9 @@ export function WebsiteApp() {
 
                     <section id="architecture" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
-                            eyebrow="Architecture"
-                            title="Harmonize disparate business layers as your operations scale."
-                            description="Seamlessly integrate commerce, finance, people management, and marketplace demands within a unified, collaborative ecosystem."
+                            eyebrow={t('architecture.eyebrow')}
+                            title={t('architecture.title')}
+                            description={t('architecture.description')}
                         />
 
                         <motion.div
@@ -306,21 +329,21 @@ export function WebsiteApp() {
                             className="grid gap-5 xl:grid-cols-[1.12fr_0.88fr]"
                         >
                             <motion.article variants={revealUp} className="website-featured-panel rounded-[36px] p-8 md:p-10">
-                                <p className="website-kicker">Connected operations</p>
+                                <p className="website-kicker">{t('architecture.connectedOps')}</p>
                                 <h3 className="website-display mt-5 text-4xl text-[var(--website-ink)] md:text-5xl">
-                                    Eliminate friction between selling, stock, finance, and reporting.
+                                    {t('architecture.connectedOpsTitle')}
                                 </h3>
                                 <p className="website-copy mt-5 max-w-2xl text-base">
-                                    Transactions, movements, and balance updates stay close to the source event, providing managers a clear operational picture without messy spreadsheets.
+                                    {t('architecture.connectedOpsDescription')}
                                 </p>
 
                                 <div className="mt-8 grid gap-4 md:grid-cols-3">
                                     {[
-                                        'Point of Sale to Invoice',
-                                        'Inventory movement to Ledger',
-                                        'Demand Capture to Analytics'
-                                    ].map((item) => (
-                                        <div key={item} className="website-line-card rounded-[24px] p-4">
+                                        t('architecture.flowCards.posToInvoice'),
+                                        t('architecture.flowCards.inventoryToLedger'),
+                                        t('architecture.flowCards.demandToAnalytics')
+                                    ].map((item, index) => (
+                                        <div key={index} className="website-line-card rounded-[24px] p-4">
                                             <div className="text-sm font-black text-[var(--website-ink)]">{item}</div>
                                         </div>
                                     ))}
@@ -328,10 +351,10 @@ export function WebsiteApp() {
                             </motion.article>
 
                             <motion.div variants={revealUp} className="website-panel rounded-[36px] p-6 md:p-8">
-                                <div className="text-[11px] font-black uppercase tracking-[0.28em] text-[var(--website-muted)]">Surface inventory</div>
+                                <div className="text-[11px] font-black uppercase tracking-[0.28em] text-[var(--website-muted)]">{t('architecture.surfaceInventory')}</div>
                                 <div className="mt-5 flex flex-wrap gap-2">
-                                    {websiteProofStrip.map((item) => (
-                                        <span key={item} className="website-chip-light">
+                                    {websiteProofStrip.map((item, index) => (
+                                        <span key={index} className="website-chip-light">
                                             {item}
                                         </span>
                                     ))}
@@ -342,9 +365,9 @@ export function WebsiteApp() {
 
                     <section id="modules" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
-                            eyebrow="Modules"
-                            title="Specialized performance driven by systematic cohesion."
-                            description="Deliver powerful capabilities across sales, inventory, finance, and team management within a tightly integrated core."
+                            eyebrow={t('modules.eyebrow')}
+                            title={t('modules.title')}
+                            description={t('modules.description')}
                         />
 
                         <motion.div
@@ -359,7 +382,7 @@ export function WebsiteApp() {
 
                                 return (
                                     <motion.article
-                                        key={block.title}
+                                        key={block.id}
                                         variants={revealUp}
                                         className={[
                                             'website-panel website-card-hover rounded-[34px] p-6 md:p-8',
@@ -379,8 +402,8 @@ export function WebsiteApp() {
                                         </div>
 
                                         <div className="mt-8 grid gap-3 md:grid-cols-2">
-                                            {block.points.map((point) => (
-                                                <div key={point} className="website-line-card rounded-[22px] p-4">
+                                            {block.points.map((point, index) => (
+                                                <div key={index} className="website-line-card rounded-[22px] p-4">
                                                     <div className="flex items-start gap-3">
                                                         <span className={['mt-0.5 inline-flex h-6 min-w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-black', tone.pill].join(' ')}>
                                                             <Check className="h-3.5 w-3.5" />
@@ -403,7 +426,7 @@ export function WebsiteApp() {
                             className="grid gap-5 md:grid-cols-2 xl:grid-cols-3"
                         >
                             {websiteSpotlights.map((spotlight) => (
-                                <motion.article key={spotlight.title} variants={revealUp} className="website-spotlight rounded-[30px] p-6">
+                                <motion.article key={spotlight.id} variants={revealUp} className="website-spotlight rounded-[30px] p-6">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-[18px] bg-white text-[var(--website-ink)] shadow-sm">
                                         <spotlight.icon className="h-5 w-5" />
                                     </div>
@@ -417,9 +440,9 @@ export function WebsiteApp() {
 
                     <section id="workflow" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
-                            eyebrow="Workflow"
-                            title="Align perfectly with the natural rhythm of your operations."
-                            description="Effortlessly track everything from initial revenue capture to final performance reporting without ever switching platforms."
+                            eyebrow={t('workflow.eyebrow')}
+                            title={t('workflow.title')}
+                            description={t('workflow.description')}
                         />
 
                         <motion.div
@@ -432,8 +455,8 @@ export function WebsiteApp() {
                             {websiteWorkflowSteps.map((step) => (
                                 <motion.article key={step.step} variants={revealUp} className="website-panel rounded-[32px] p-6 md:p-7">
                                     <div className="flex items-center justify-between gap-4">
-                                        <div className="website-step-chip website-step-chip-light">{step.step}</div>
-                                        <div className="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--website-muted)]">Operating step</div>
+                                        <div className="website-step-chip website-step-chip-light rtl:pb-1 rtl:translate-y-px rtl:tracking-normal w-[2.1rem] h-[2.1rem] shrink-0 font-sans tracking-widest flex items-center justify-center">{step.step}</div>
+                                        <div className="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--website-muted)]">{t('workflow.operatingStep')}</div>
                                     </div>
                                     <h3 className="mt-6 text-2xl font-black tracking-tight text-[var(--website-ink)]">{step.title}</h3>
                                     <p className="website-copy mt-4 text-sm">{step.description}</p>
@@ -441,10 +464,10 @@ export function WebsiteApp() {
                                         {step.outcome}
                                     </div>
                                     <div className="mt-6 space-y-3">
-                                        {step.points.map((point) => (
-                                            <div key={point} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
+                                        {step.points.map((point, index) => (
+                                            <div key={index} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
                                                 <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
-                                                    <ChevronRight className="h-4 w-4" />
+                                                    <ChevronRight className="h-4 w-4 rtl:rotate-180" />
                                                 </div>
                                                 {point}
                                             </div>
@@ -457,9 +480,9 @@ export function WebsiteApp() {
 
                     <section className="mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
-                            eyebrow="Customer teams"
-                            title="Achieve a definitive single source of truth across all operational teams."
-                            description="Empower your organizational verticals effortlessly, spanning retail applications to service-focused enterprise structures."
+                            eyebrow={t('testimonials.eyebrow')}
+                            title={t('testimonials.title')}
+                            description={t('testimonials.description')}
                         />
 
                         <motion.div
@@ -481,7 +504,7 @@ export function WebsiteApp() {
 
                             <div className="grid gap-5">
                                 {websiteTestimonials.slice(1).map((testimonial) => (
-                                    <motion.blockquote key={testimonial.quote} variants={revealUp} className="website-panel rounded-[30px] p-6">
+                                    <motion.blockquote key={testimonial.id} variants={revealUp} className="website-panel rounded-[30px] p-6">
                                         <p className="text-lg font-semibold leading-8 text-[var(--website-ink)]">"{testimonial.quote}"</p>
                                         <footer className="mt-8 border-t border-[var(--website-border)] pt-5">
                                             <div className="text-[11px] font-black uppercase tracking-[0.24em] text-[var(--website-muted)]">{testimonial.role}</div>
@@ -495,22 +518,22 @@ export function WebsiteApp() {
 
                     <section id="pricing" className="website-section mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
                         <SectionHeading
-                            eyebrow="Pricing"
-                            title="Choose the package that matches how much of the business you want Atlas to run."
-                            description="The tiers expand from core sales and stock control into finance, CRM, marketplace workflows, and team operations."
+                            eyebrow={t('pricing.eyebrow')}
+                            title={t('pricing.title')}
+                            description={t('pricing.description')}
                         />
 
                         <div className="flex justify-center mt-8 mb-4">
                             <div className="flex items-center gap-3">
-                                <span className={`text-sm font-semibold ${!isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>Monthly</span>
+                                <span className={`text-sm font-semibold ${!isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>{t('pricing.monthly')}</span>
                                 <button
                                     type="button"
                                     onClick={() => setIsAnnual(!isAnnual)}
                                     className="relative inline-flex h-6 w-11 items-center rounded-full bg-[var(--website-ink)] transition-colors focus:outline-none"
                                 >
-                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-1'}`} />
+                                    <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${isAnnual ? 'translate-x-6 rtl:-translate-x-6' : 'translate-x-1 rtl:-translate-x-1'}`} />
                                 </button>
-                                <span className={`text-sm font-semibold ${isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>Annually</span>
+                                <span className={`text-sm font-semibold ${isAnnual ? 'text-[var(--website-ink)]' : 'text-[var(--website-muted)]'}`}>{t('pricing.annually')}</span>
                             </div>
                         </div>
 
@@ -523,7 +546,7 @@ export function WebsiteApp() {
                         >
                             {websitePricingPlans.map((plan) => (
                                 <motion.article
-                                    key={plan.name}
+                                    key={plan.id}
                                     variants={revealUp}
                                     className={[
                                         'rounded-[34px] p-6 md:p-7',
@@ -532,12 +555,12 @@ export function WebsiteApp() {
                                 >
                                     <div className="flex items-start justify-between gap-4">
                                         <div>
-                                            <div className="website-kicker">Atlas package</div>
+                                            <div className="website-kicker">{t('pricing.atlasPackage')}</div>
                                             <h3 className="website-display mt-4 text-3xl text-[var(--website-ink)]">{plan.name}</h3>
                                         </div>
                                         {plan.highlight ? (
                                             <span className="website-cta-primary rounded-full px-3 py-1.5 text-xs font-black uppercase tracking-[0.18em]">
-                                                Recommended
+                                                {t('pricing.recommended')}
                                             </span>
                                         ) : null}
                                     </div>
@@ -552,13 +575,13 @@ export function WebsiteApp() {
 
                                     <div className="mt-8 flex items-baseline gap-1">
                                         <div className="text-3xl font-black tracking-tight text-[var(--website-ink)]">{isAnnual ? plan.annualPriceLabel : plan.priceLabel}</div>
-                                        <div className="text-sm font-semibold text-[var(--website-muted)]">{isAnnual ? '/per year' : '/per month'}</div>
+                                        <div className="text-sm font-semibold text-[var(--website-muted)]">{isAnnual ? t('pricing.perYear') : t('pricing.perMonth')}</div>
                                     </div>
                                     <p className="website-copy mt-4 text-sm">{plan.description}</p>
 
                                     <div className="mt-8 space-y-3">
-                                        {plan.features.map((feature) => (
-                                            <div key={feature} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
+                                        {plan.features.map((feature, index) => (
+                                            <div key={index} className="flex items-start gap-3 text-sm font-medium text-[var(--website-ink)]">
                                                 <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--website-ink)] text-white">
                                                     <Check className="h-4 w-4" />
                                                 </div>
@@ -586,7 +609,7 @@ export function WebsiteApp() {
                                         ].join(' ')}
                                     >
                                         {plan.cta}
-                                        <ArrowRight className="h-4 w-4" />
+                                        <ArrowRight className="h-4 w-4 rtl:rotate-180" />
                                     </button>
                                 </motion.article>
                             ))}
@@ -603,12 +626,12 @@ export function WebsiteApp() {
                         >
                             <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
                                 <div className="space-y-5">
-                                    <p className="website-kicker text-white/52">Atlas rollout</p>
+                                    <p className="website-kicker text-white/52">{t('cta.eyebrow')}</p>
                                     <h2 className="website-display max-w-3xl text-4xl text-white md:text-6xl">
-                                        Eliminate operational friction and unify your organization.
+                                        {t('cta.title')}
                                     </h2>
                                     <p className="max-w-2xl text-base leading-8 text-white/68 md:text-lg">
-                                        Integrate vital processes into one robust system designed specifically around the organic workflows of your workforce.
+                                        {t('cta.description')}
                                     </p>
                                 </div>
 
@@ -618,14 +641,14 @@ export function WebsiteApp() {
                                         onClick={() => scrollToSection('modules')}
                                         className="website-cta-primary rounded-full px-6 py-3 text-sm font-semibold"
                                     >
-                                        Review modules
+                                        {t('cta.reviewModules')}
                                     </button>
                                     <button
                                         type="button"
                                         onClick={() => scrollToSection('pricing')}
                                         className="rounded-full border border-white/16 bg-white/6 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                                     >
-                                        Plan scope
+                                        {t('cta.planScope')}
                                     </button>
                                 </div>
                             </div>

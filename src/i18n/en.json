@@ -1,0 +1,359 @@
+{
+  "brand": {
+    "name": "Atlas",
+    "tagline": "Business operating system",
+    "pageTitle": "Atlas | Business Operating System"
+  },
+  "nav": {
+    "architecture": "Architecture",
+    "modules": "Modules",
+    "workflow": "Workflow",
+    "pricing": "Pricing",
+    "planRollout": "Plan rollout"
+  },
+  "hero": {
+    "pill": "Unified operations",
+    "heading": "ATLAS ERP",
+    "description": "Atlas unifies essential business operations—from point of sale and inventory management to finance and human resources—into a seamless ecosystem.",
+    "ctaExplore": "Explore architecture",
+    "ctaModules": "View modules",
+    "metrics": {
+      "modules": {
+        "value": "30+",
+        "label": "Operational Modules"
+      },
+      "currencies": {
+        "value": "04",
+        "label": "Operating Currencies"
+      },
+      "languages": {
+        "value": "03",
+        "label": "Interface Languages"
+      },
+      "workspace": {
+        "value": "01",
+        "label": "Shared Workspace"
+      }
+    },
+    "designSignals": {
+      "workflow": {
+        "label": "Workflow",
+        "value": "Commerce & Finance Integration"
+      },
+      "localization": {
+        "label": "Localization",
+        "value": "Multilingual Interface Output"
+      },
+      "output": {
+        "label": "Business output",
+        "value": "Standardized Invoicing Systems"
+      },
+      "insights": {
+        "label": "Insights",
+        "value": "Real-Time Analytic Modeling"
+      }
+    }
+  },
+  "canvas": {
+    "kicker": "Atlas workspace map",
+    "heading": "A centralized operating model.",
+    "badge": "Connected operating model",
+    "linkedFlow": "Linked flow",
+    "deployment": "Deployment",
+    "deploymentHeading": "Local, cloud, or hybrid",
+    "deploymentDescription": "Ensure consistent frontline accessibility with robust reporting connected directly to source operations.",
+    "coreModuleMix": "Core module mix",
+    "commands": {
+      "frontline": {
+        "label": "Frontline",
+        "value": "POS & KDS",
+        "note": "Streamline checkout and kitchen workflows"
+      },
+      "stock": {
+        "label": "Stock",
+        "value": "Inventory Management",
+        "note": "Control catalogs and track stock movement"
+      },
+      "finance": {
+        "label": "Finance",
+        "value": "Ledger & Payments",
+        "note": "Manage budgets and financial settlements"
+      },
+      "demand": {
+        "label": "Demand",
+        "value": "CRM & Marketplace",
+        "note": "Oversee orders and digital storefronts"
+      },
+      "service": {
+        "label": "Service",
+        "value": "Travel Agency",
+        "note": "Handle tours and manage commissions"
+      },
+      "people": {
+        "label": "People",
+        "value": "HR & Workspace",
+        "note": "Administer teams and configure access"
+      }
+    }
+  },
+  "architecture": {
+    "eyebrow": "Architecture",
+    "title": "Harmonize disparate business layers as your operations scale.",
+    "description": "Seamlessly integrate commerce, finance, people management, and marketplace demands within a unified, collaborative ecosystem.",
+    "connectedOps": "Connected operations",
+    "connectedOpsTitle": "Eliminate friction between selling, stock, finance, and reporting.",
+    "connectedOpsDescription": "Transactions, movements, and balance updates stay close to the source event, providing managers a clear operational picture without messy spreadsheets.",
+    "flowCards": {
+      "posToInvoice": "Point of Sale to Invoice",
+      "inventoryToLedger": "Inventory movement to Ledger",
+      "demandToAnalytics": "Demand Capture to Analytics"
+    },
+    "surfaceInventory": "Surface inventory",
+    "blocks": {
+      "commerce": {
+        "eyebrow": "Commerce Engine",
+        "title": "Unified Transaction Processing",
+        "description": "Consolidate sales operations, kitchen displays, and invoicing into a single seamless platform without data silos.",
+        "points": [
+          "Point of Sale Operations",
+          "Kitchen Display Systems",
+          "Sales & Return Tracking",
+          "Automated Invoicing"
+        ]
+      },
+      "inventory": {
+        "eyebrow": "Inventory Core",
+        "title": "Intelligent Inventory Oversight",
+        "description": "Integrate product catalogs and stock adjustments directly into your main operating workflow for real-time accuracy.",
+        "points": [
+          "Product Catalog Management",
+          "Automated Replenishment",
+          "Cross-Location Transfers",
+          "Comprehensive Audit Trails"
+        ]
+      },
+      "finance": {
+        "eyebrow": "Finance Layer",
+        "title": "Integrated Financial Control",
+        "description": "Anchor ledgers, transactions, and budget reviews to underlying operational activities automatically.",
+        "points": [
+          "Centralized Ledger",
+          "Loan & Installment Tracking",
+          "Dynamic Budget Views",
+          "Secure Invoice Archives"
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Demand + Workspace",
+        "title": "Comprehensive Ecosystem Management",
+        "description": "Orchestrate business partners, digital storefronts, and internal teams seamlessly across a consolidated environment.",
+        "points": [
+          "Integrated CRM Hub",
+          "Digital Marketplace Stores",
+          "Human Resources Control",
+          "External Communication Suite"
+        ]
+      }
+    }
+  },
+  "modules": {
+    "eyebrow": "Modules",
+    "title": "Specialized performance driven by systematic cohesion.",
+    "description": "Deliver powerful capabilities across sales, inventory, finance, and team management within a tightly integrated core.",
+    "spotlights": {
+      "offline": {
+        "eyebrow": "Offline-first",
+        "title": "Resilient Offline Operations",
+        "description": "Maintain uninterrupted frontline workflows with reliable background synchronization upon reconnection."
+      },
+      "exchange": {
+        "eyebrow": "Exchange-aware",
+        "title": "Native Multi-Currency Support",
+        "description": "Conduct and report business seamlessly across USD, EUR, IQD, and TRY natively."
+      },
+      "workspace": {
+        "eyebrow": "Workspace control",
+        "title": "Granular Role Governance",
+        "description": "Securely gate modules and separate configurations across your administrative and frontline staff."
+      },
+      "service": {
+        "eyebrow": "Service modules",
+        "title": "Specialized Service Handling",
+        "description": "Manage diverse operations like tourist groups and commission logic alongside standard retail modules."
+      },
+      "people": {
+        "eyebrow": "People ops",
+        "title": "Embedded Human Resources",
+        "description": "Integrate employee records and payroll context seamlessly into the core workspace model."
+      },
+      "marketplace": {
+        "eyebrow": "Marketplace",
+        "title": "Streamlined Digital Commerce",
+        "description": "Launch operational storefronts and automatically funnel inquiries into your centralized fulfillment centers."
+      }
+    }
+  },
+  "workflow": {
+    "eyebrow": "Workflow",
+    "title": "Align perfectly with the natural rhythm of your operations.",
+    "description": "Effortlessly track everything from initial revenue capture to final performance reporting without ever switching platforms.",
+    "operatingStep": "Operating step",
+    "steps": {
+      "capture": {
+        "title": "Capture Demand at the Source",
+        "description": "Initiate workflows precisely where value is created—be it the checkout counter or your digital storefront.",
+        "outcome": "Unified Revenue Streams",
+        "points": [
+          "Point of Sale Operations",
+          "Integrated CRM Platforms",
+          "Digital Marketplace Checkout"
+        ]
+      },
+      "synchronize": {
+        "title": "Synchronize Asset Movement",
+        "description": "Link inventory updates with financial events ensuring a transparent and accurate view of the business state.",
+        "outcome": "Cohesive Operational Alignment",
+        "points": [
+          "Automated Inventory Adjustments",
+          "Real-time Ledger Balancing",
+          "Integrated Finance Tracking"
+        ]
+      },
+      "insights": {
+        "title": "Derive Actionable Insights",
+        "description": "Transform operating data directly into responsive analytics and comprehensive performance reviews.",
+        "outcome": "Actionable Business Intelligence",
+        "points": [
+          "Real-time Margin Analysis",
+          "Performance Benchmarking",
+          "Deep Workspace Analytics"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Customer teams",
+    "title": "Achieve a definitive single source of truth across all operational teams.",
+    "description": "Empower your organizational verticals effortlessly, spanning retail applications to service-focused enterprise structures.",
+    "items": {
+      "retail": {
+        "quote": "Atlas united our disparate systems into one seamless operating board. The improvement in team efficiency is remarkable.",
+        "role": "Retail Operations Lead",
+        "company": "Multi-Branch Store Group"
+      },
+      "wholesale": {
+        "quote": "A truly consolidated workflow that flawlessly replaces multiple fragmented tools for demand management and financial tracking.",
+        "role": "Commercial Coordinator",
+        "company": "Wholesale Enterprise"
+      },
+      "travel": {
+        "quote": "Managing complex operations like commissions and HR records is now completely effortless and perfectly integrated.",
+        "role": "Service Business Manager",
+        "company": "Travel Operations"
+      }
+    }
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Choose the package that matches how much of the business you want Atlas to run.",
+    "description": "The tiers expand from core sales and stock control into finance, CRM, marketplace workflows, and team operations.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "perYear": "/per year",
+    "perMonth": "/per month",
+    "atlasPackage": "Atlas package",
+    "recommended": "Recommended",
+    "plans": {
+      "commerce": {
+        "name": "Basic Plan",
+        "priceLabel": "75,000 IQD",
+        "annualPriceLabel": "800,000 IQD",
+        "annualSaving": "11% Saving",
+        "description": "Essential point-of-sale and inventory control for growing businesses.",
+        "features": [
+          "Point Of Sale (POS)",
+          "Sales History, Returns & Invoice Output (Receipt)",
+          "Products, Categories & Storages",
+          "Inventory Transfers & Stock Adjustments",
+          "Ledger, Payments & Direct Transactions",
+          "Real-Time Dashboard Overview",
+          "Workspace In-App Notification Inbox & Alerts",
+          "Up to 3 Members in the Workspace"
+        ],
+        "cta": "Choose Commerce Core"
+      },
+      "operations": {
+        "name": "Business Plan",
+        "priceLabel": "100,000 IQD",
+        "annualPriceLabel": "1,000,000 IQD",
+        "annualSaving": "16% Saving",
+        "description": "Advanced functionality including CRM, finance, and digital marketplace integrations.",
+        "features": [
+          "Everything in Basic Plan",
+          "Barcode Scanner & Thermal Printer Support For POS",
+          "High Quality A4 Invoice Outputs (PDF) With Multiple Workspace Contacts",
+          "Advanced CRM Business Partners, Suppliers & Customers",
+          "Orders & Marketplace E-Commerce Inquiry Orders",
+          "Marketplace Storefronts, & QR Sharing",
+          "Loans & Installments Management With Invoice Output",
+          "Stock & Category Discounts Management",
+          "Revenue Analytics & Team Performance",
+          "Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)",
+          "Supports Sales, Accounting & Analytics monthly Excel Export",
+          "Supports uploading PDF files to workspace storage (max 100 MB)",
+          "Up to 2 Workspace Branches",
+          "Up to 10 Members in the Workspace"
+        ],
+        "tooltips": {
+          "Real-Time Multi-Currency Support (IQD د,ع, USD $, EUR €, TRY ₺)": "Exchange Rates Are Updated Automatically Based on your Region in Iraq, But The User Can Always add Exchange Rates Manually",
+          "Marketplace Storefronts, & QR Sharing": "You Can Create a Free Storefront for your Business and Share it with your Customers via QR Code or Link, and They Can Order from you through it, and the Orders Will Come to your Workspace as Inquiries"
+        },
+        "cta": "Choose Operations Suite"
+      },
+      "enterprise": {
+        "name": "Enterprise Plan",
+        "priceLabel": "150,000 IQD",
+        "annualPriceLabel": "1,500,000 IQD",
+        "annualSaving": "22% Saving",
+        "description": "Complete enterprise solution featuring deep HR management and advanced internal protocols.",
+        "features": [
+          "Everything in Business Plan",
+          "Accounting, HR, Expenses & Payroll Context",
+          "Workspace Roles & Permission Controls",
+          "Access to In-App Whatsapp & Whatsapp Sharing Features",
+          "Stock Expiry, Batches and Lot tracking",
+          "Supports uploading various file types to workspace storage (max 1 GB)",
+          "Up to 5 Workspace Branches",
+          "Up to 20 Members in the Workspace"
+        ],
+        "tooltips": {
+          "Accounting, HR, Expenses & Payroll Context": "Advanced Accounting and HR Management With Dividends and Salaries Management, The User Will Be Alerted Upon Overdues Via the In-App Notification System"
+        },
+        "cta": "Choose Enterprise Flow"
+      }
+    }
+  },
+  "proofStrip": [
+    "POS",
+    "KDS",
+    "Inventory",
+    "Discounts",
+    "Ledger",
+    "Marketplace",
+    "Orders",
+    "Partners",
+    "Budgets",
+    "Currency",
+    "HR",
+    "Analytics",
+    "Communication",
+    "Administration"
+  ],
+  "cta": {
+    "eyebrow": "Atlas rollout",
+    "title": "Eliminate operational friction and unify your organization.",
+    "description": "Integrate vital processes into one robust system designed specifically around the organic workflows of your workforce.",
+    "reviewModules": "Review modules",
+    "planScope": "Plan scope"
+  }
+}

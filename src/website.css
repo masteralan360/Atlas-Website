@@ -449,3 +449,21 @@
         transform: none;
     }
 }
+
+/* RTL Layout adjustments */
+[dir="rtl"] .website-aura-left {
+    left: auto;
+    right: -10rem;
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .website-aura-right {
+    right: auto;
+    left: -8rem;
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .website-progress {
+    transform-origin: right center;
+    background: linear-gradient(-90deg, var(--website-teal), var(--website-clay), var(--website-gold));
+}
