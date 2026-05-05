@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 
 import './i18n'
 import { WebsiteApp } from './WebsiteApp'
@@ -13,6 +14,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
     <StrictMode>
-        <WebsiteApp />
+        <BrowserRouter>
+            <WebsiteApp />
+        </BrowserRouter>
     </StrictMode>,
 )

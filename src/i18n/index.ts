@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next'
 
 import en from './en.json'
 import ar from './ar.json'
-import ckb from './ckb.json'
+import ku from './ku.json'
 
 const savedLang = localStorage.getItem('atlas-lang') || 'en'
 
@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
     resources: {
         en: { translation: en },
         ar: { translation: ar },
-        ckb: { translation: ckb }
+        ku: { translation: ku }
     },
     lng: savedLang,
     fallbackLng: 'en',
@@ -21,7 +21,7 @@ i18n.use(initReactI18next).init({
 })
 
 function applyDirection(lang: string) {
-    const dir = lang === 'ar' || lang === 'ckb' ? 'rtl' : 'ltr'
+    const dir = lang === 'ar' || lang === 'ku' ? 'rtl' : 'ltr'
     document.documentElement.lang = lang
     document.documentElement.dir = dir
 }
