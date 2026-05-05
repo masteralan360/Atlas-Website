@@ -5,7 +5,19 @@ import en from './en.json'
 import ar from './ar.json'
 import ku from './ku.json'
 
-const savedLang = localStorage.getItem('atlas-lang') || 'en'
+const SUPPORTED_LANGUAGES = ['en', 'ar', 'ku']
+
+const getInitialLang = () => {
+    // Try to get from URL first for direct links
+    const pathLang = window.location.pathname.split('/')[1]
+    if (pathLang && SUPPORTED_LANGUAGES.includes(pathLang)) {
+        return pathLang
+    }
+    // Fallback to localStorage or default
+    return localStorage.getItem('atlas-lang') || 'en'
+}
+
+const initialLang = getInitialLang()
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -13,10 +25,13 @@ i18n.use(initReactI18next).init({
         ar: { translation: ar },
         ku: { translation: ku }
     },
-    lng: savedLang,
+    lng: initialLang,
     fallbackLng: 'en',
     interpolation: {
         escapeValue: false
+    },
+    react: {
+        useSuspense: false
     }
 })
 
