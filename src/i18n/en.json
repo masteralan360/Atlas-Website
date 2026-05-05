@@ -272,7 +272,7 @@
         "description": "Essential point-of-sale and inventory control for growing businesses.",
         "features": [
           "Point Of Sale (POS)",
-          "Sales History, Returns & Invoice Output (Receipt)",
+          "Sales History, Returns & Invoice Output (Receipt Only)",
           "Products, Categories & Storages",
           "Inventory Transfers & Stock Adjustments",
           "Ledger, Payments & Direct Transactions",

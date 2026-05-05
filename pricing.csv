@@ -1,29 +1,30 @@
 Feature/Module Category,Monthly Value (IQD),Yearly Value (IQD),Plan Inclusion
-Core POS & Inventory Engine,"50,000","600,000",Commerce Core
-Stock & Category Discounts Management,"10,000","120,000",Commerce Core
-Barcode Scanner & Thermal Printer Support For POS,"10,000","120,000",Commerce Core
-High Quality A4 Invoice Outputs (PDF) With Multiple Workspace Contacts,"15,000","180,000",Commerce Core
-Ledger & Payments & Direct Transactions,"25,000","300,000",Commerce Core
-Advanced CRM & Partner Management,"30,000","360,000",Operations Suite
-Revenue Analytics & Team Performance,"10,000","120,000",Operations Suite
-Real-Time Multi-Currency Support,"10,000","120,000",Operations Suite
-Orders & Marketplace E-Commerce Inquiry Orders,"60,000","720,000",Operations Suite
-Loan & Installment Management,"20,000","240,000",Operations Suite
-"HR, Payroll & Full Accounting","60,000","720,000",Enterprise Flow
-Batch/Lot Tracking & Expiry,"40,000","480,000",Enterprise Flow
-Workspace Roles & Permission Controls,"15,000","180,000",Enterprise Flow
-WhatsApp Integration & Sharing,"25,000","300,000",Enterprise Flow
-Supports uploading PDF files to workspace storage (max 100 MB),"10,000","120,000",Enterprise Flow
-Supports uploading various file types to workspace storage (max 1 GB),"35,000","420,000",Enterprise Flow
+Core POS & Inventory Engine,"50,000","600,000",Basic Plan
+Sales History Returns & Invoice Output (Receipt Only),"10,000","120,000",Basic Plan
+Stock & Category Discounts Management,"10,000","120,000",Basic Plan
+Ledger & Payments & Direct Transactions,"25,000","300,000",Basic Plan
+High Quality A4 Invoice Outputs (PDF) With Multiple Workspace Contacts,"15,000","180,000",Business Plan
+Barcode Scanner & Thermal Printer Support For POS,"10,000","120,000",Business Plan
+Advanced CRM & Partner Management,"30,000","360,000",Business Plan
+Revenue Analytics & Team Performance,"10,000","120,000",Business Plan
+Real-Time Multi-Currency Support,"10,000","120,000",Business Plan
+Orders & Marketplace E-Commerce Inquiry Orders,"60,000","720,000",Business Plan
+Loan & Installment Management,"20,000","240,000",Business Plan
+"HR, Payroll & Full Accounting","60,000","720,000",Enterprise Plan
+Batch/Lot Tracking & Expiry,"40,000","480,000",Enterprise Plan
+Workspace Roles & Permission Controls,"15,000","180,000",Enterprise Plan
+WhatsApp Integration & Sharing,"25,000","300,000",Enterprise Plan
+Supports uploading PDF files to workspace storage (max 100 MB),"10,000","120,000",Enterprise Plan
+Supports uploading various file types to workspace storage (max 1 GB),"35,000","420,000",Enterprise Plan
 Per User License (Standard),"5,000","60,000",All Plans
 Workspace Branch (Multi-location),"25,000","300,000",Ops / Enterprise
 
-Plan Name,Monthly Cost,Individual Market Value,Total Savings,Effective User Cost
-Commerce Core,"75,000 IQD","125,000 IQD","50,000 (40%)","25,000 IQD"
-Operations Suite,"100,000 IQD","330,000 IQD","230,000 (70%)","10,000 IQD"
-Enterprise Flow,"150,000 IQD","715,000 IQD","565,000 (79%)","7,500 IQD"
+Plan Name,Monthly Cost,Individual Market Value,Total Savings,Effective User Cost,Individual Branch Value
+Basic Plan,"75,000 IQD","135,000 IQD","60,000 IQD (44%)","8,000 IQD"
+Business Plan,"100,000 IQD","360,000 IQD","260,000 IQD (72%)","5,000 IQD","20,000 IQD"
+Enterprise Plan,"150,000 IQD","600,000 IQD","450,000 IQD (75%)","5,000 IQD","25,000 IQD"
 
-Plan Name,Yearly Cost,Individual Market Value,Total Savings,Effective User Cost
-Commerce Core,"800,000 IQD","1,500,000 IQD","700,000 (47%)","266,667 IQD"
-Operations Suite,"1,000,000 IQD","3,960,000 IQD","2,960,000 (75%)","100,000 IQD"
-Enterprise Flow,"1,500,000 IQD","8,580,000 IQD","7,080,000 (83%)","75,000 IQD"
+Plan Name,Yearly Cost,Individual Market Value,Total Savings,Effective User Cost,Individual Branch Value
+Basic Plan,"800,000 IQD","1,620,000 IQD","820,000 IQD (51%)","100,000 IQD"
+Business Plan,"1,000,000 IQD","4,320,000 IQD","3,320,000 IQD (77%)","60,000 IQD","200,000 IQD"
+Enterprise Plan,"1,500,000 IQD","7,200,000 IQD","5,700,000 IQD (79%)","60,000 IQD","250,000 IQD"
