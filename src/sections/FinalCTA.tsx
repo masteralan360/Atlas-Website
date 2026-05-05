@@ -40,7 +40,7 @@ export function FinalCTA() {
                             onClick={() => navigate(`/${i18n.language}/Pricing`)}
                             className="rounded-full border border-white/16 bg-white/6 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                         >
-                            {t('cta.planScope')}
+                            {t('nav.pricing')}
                         </button>
                     </div>
                 </div>

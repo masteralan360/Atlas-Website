@@ -130,8 +130,7 @@ export function Navbar({ scrollRef }: NavbarProps) {
                         to={`/${i18n.language}/Pricing`}
                         className="website-cta-primary rounded-full px-4 py-2 text-sm font-semibold md:px-5"
                     >
-                        <span className="hidden md:inline">{t('nav.planRollout')}</span>
-                        <span className="md:hidden">{t('nav.pricing')}</span>
+                        {t('nav.pricing')}
                     </Link>
                 </div>
             </div>

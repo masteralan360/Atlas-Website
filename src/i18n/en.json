@@ -8,8 +8,7 @@
     "architecture": "Architecture",
     "modules": "Modules",
     "workflow": "Workflow",
-    "pricing": "Pricing",
-    "planRollout": "Plan rollout"
+    "pricing": "Pricing"
   },
   "hero": {
     "pill": "Unified operations",
