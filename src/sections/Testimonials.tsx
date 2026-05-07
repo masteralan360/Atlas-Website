@@ -11,7 +11,6 @@ export function Testimonials() {
     return (
         <section className="mx-auto mt-24 max-w-7xl space-y-12 md:mt-32">
             <SectionHeading
-                eyebrow={t('testimonials.eyebrow')}
                 title={t('testimonials.title')}
                 description={t('testimonials.description')}
             />

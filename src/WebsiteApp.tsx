@@ -9,7 +9,6 @@ import { Architecture } from './sections/Architecture'
 import { Modules } from './sections/Modules'
 import { Workflow } from './sections/Workflow'
 import { Pricing } from './sections/Pricing'
-import { Testimonials } from './sections/Testimonials'
 import { FinalCTA } from './sections/FinalCTA'
 import { useScrollProgress } from './context/ScrollContext'
 
@@ -95,7 +94,6 @@ function HomePage({ scrollToSection }: { scrollToSection: (id: string) => void }
             <Architecture />
             <Modules />
             <Workflow />
-            <Testimonials />
             <Pricing />
             <FinalCTA />
         </>

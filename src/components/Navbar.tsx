@@ -17,7 +17,28 @@ export function Navbar({ scrollRef }: NavbarProps) {
     const websiteNavItems = getWebsiteNavItems(t)
 
     const [isLangMenuOpen, setIsLangMenuOpen] = useState(false)
+    const [isVisible, setIsVisible] = useState(true)
+    const lastScrollY = useRef(0)
     const langMenuRef = useRef<HTMLDivElement>(null)
+
+    // Hide on scroll down, show on scroll up
+    useEffect(() => {
+        const scrollContainer = scrollRef.current
+        if (!scrollContainer) return
+
+        const handleScroll = () => {
+            const currentY = scrollContainer.scrollTop
+            if (currentY > lastScrollY.current && currentY > 80) {
+                setIsVisible(false)
+            } else {
+                setIsVisible(true)
+            }
+            lastScrollY.current = currentY
+        }
+
+        scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+        return () => scrollContainer.removeEventListener('scroll', handleScroll)
+    }, [scrollRef])
 
     const isHome = location.pathname === `/${i18n.language}` || location.pathname === `/${i18n.language}/`
 
@@ -42,7 +63,15 @@ export function Navbar({ scrollRef }: NavbarProps) {
     }, [])
 
     return (
-        <header className="sticky top-0 z-50 px-4 pt-4 md:px-6">
+        <AnimatePresence>
+            {isVisible && (
+                <motion.header
+                    initial={{ y: -100 }}
+                    animate={{ y: 0 }}
+                    exit={{ y: -100 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 md:px-6"
+                >
             <div className="website-nav-shell mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-3 md:px-6">
                 <Link
                     to={`/${i18n.language}`}
@@ -134,6 +163,8 @@ export function Navbar({ scrollRef }: NavbarProps) {
                     </Link>
                 </div>
             </div>
-        </header>
+                </motion.header>
+            )}
+        </AnimatePresence>
     )
 }
