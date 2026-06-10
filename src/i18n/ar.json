@@ -256,18 +256,18 @@
     "eyebrow": "الأسعار",
     "title": "اختر الباقة التي تتناسب مع مقدار العمل الذي ترغب في أن يديره أطلس.",
     "description": "تتوسع المستويات من مبيعات أساسية ومراقبة المخزون إلى التمويل، إدارة علاقات العملاء، سير عمل السوق، وعمليات الفريق.",
-    "monthly": "شهري",
-    "annually": "سنوي",
-    "perYear": "/سنة",
-    "perMonth": "/شهر",
+    "monthly": "",
+    "annually": "",
+    "perYear": "",
+    "perMonth": "",
     "atlasPackage": "باقة أطلس",
     "recommended": "الخطة الأكثر شعبية",
     "plans": {
       "commerce": {
         "name": "الباقة الأساسية",
-        "priceLabel": "75,000 د.ع",
-        "annualPriceLabel": "800,000 د.ع",
-        "annualSaving": "توفير 11%",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "نقاط بيع أساسية والتحكم في المخزون للأعمال النامية.",
         "features": [
           "نقطة البيع (POS)",
@@ -283,9 +283,9 @@
       },
       "operations": {
         "name": "الباقة التجارية",
-        "priceLabel": "100,000 د.ع",
-        "annualPriceLabel": "1,000,000 د.ع",
-        "annualSaving": "توفير 16%",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "وظائف متقدمة تشمل إدارة علاقات العملاء، التمويل، وتكامل السوق الرقمية.",
         "features": [
           "كل ما في الباقة الأساسية",
@@ -311,9 +311,9 @@
       },
       "enterprise": {
         "name": "الباقة مؤسسات",
-        "priceLabel": "150,000 د.ع",
-        "annualPriceLabel": "1,500,000 د.ع",
-        "annualSaving": "توفير 22%",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "حل مؤسسي كامل يتميز بإدارة موارد بشرية عميقة وبروتوكولات داخلية متقدمة.",
         "features": [
           "كل ما في الباقة التجارية",

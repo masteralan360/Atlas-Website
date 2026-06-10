@@ -255,18 +255,18 @@
     "eyebrow": "Pricing",
     "title": "Choose the package that matches how much of the business you want Atlas to run.",
     "description": "The tiers expand from core sales and stock control into finance, CRM, marketplace workflows, and team operations.",
-    "monthly": "Monthly",
-    "annually": "Annually",
-    "perYear": "/per year",
-    "perMonth": "/per month",
+    "monthly": "",
+    "annually": "",
+    "perYear": "",
+    "perMonth": "",
     "atlasPackage": "Atlas package",
     "recommended": "Recommended",
     "plans": {
       "commerce": {
         "name": "Basic Plan",
-        "priceLabel": "75,000 IQD",
-        "annualPriceLabel": "800,000 IQD",
-        "annualSaving": "11% Saving",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "Essential point-of-sale and inventory control for growing businesses.",
         "features": [
           "Point Of Sale (POS)",
@@ -282,9 +282,9 @@
       },
       "operations": {
         "name": "Business Plan",
-        "priceLabel": "100,000 IQD",
-        "annualPriceLabel": "1,000,000 IQD",
-        "annualSaving": "16% Saving",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "Advanced functionality including CRM, finance, and digital marketplace integrations.",
         "features": [
           "Everything in Basic Plan",
@@ -310,9 +310,9 @@
       },
       "enterprise": {
         "name": "Enterprise Plan",
-        "priceLabel": "150,000 IQD",
-        "annualPriceLabel": "1,500,000 IQD",
-        "annualSaving": "22% Saving",
+        "priceLabel": "",
+        "annualPriceLabel": "",
+        "annualSaving": "",
         "description": "Complete enterprise solution featuring deep HR management and advanced internal protocols.",
         "features": [
           "Everything in Business Plan",
