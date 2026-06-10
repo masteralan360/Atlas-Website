@@ -6,7 +6,7 @@ export function SectionHeading({
     title,
     description
 }: {
-    eyebrow: string
+    eyebrow?: string
     title: string
     description: string
 }) {
